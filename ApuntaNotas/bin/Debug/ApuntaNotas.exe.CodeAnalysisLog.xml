@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 14.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="14.0">
+ <Targets>
+  <Target Name="C:\Users\gbkim\Downloads\apuntanotas-79962\ApuntaNotas\trunk\ApuntaNotas\bin\Debug\ApuntaNotas.exe">
+   <Modules>
+    <Module Name="apuntanotas.exe">
+     <Namespaces>
+      <Namespace Name="ApuntaNotas.ViewModel">
+       <Types>
+        <Type Name="CategoryEditorViewModel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor(ApuntaNotas.Business.ICategoryRepository)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2017-01-29 16:03:52Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\gbkim\Downloads\apuntanotas-79962\ApuntaNotas\trunk\ApuntaNotas\ViewModel" File="CategoryEditorViewModel.cs" Line="33">클래스에서 정의한 가상 메서드를 호출하는 호출 체인이 'CategoryEditorViewModel.CategoryEditorViewModel(ICategoryRepository)'에 있습니다. &#xD;&#xA;&#xD;&#xA;CategoryEditorViewModel..ctor(ICategoryRepository)&#xD;&#xA;CategoryEditorViewModel.set_CategoryRepository(ICategoryRepository):Void&#xD;&#xA;ViewModelBase.RaisePropertyChanged(String):Void 호출 스택을 검토하여 의도하지 않은 결과는 없는지 확인하십시오.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="MainViewModel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor(ApuntaNotas.Business.INoteRepository,ApuntaNotas.Business.ICategoryRepository)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2017-01-29 16:03:52Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\gbkim\Downloads\apuntanotas-79962\ApuntaNotas\trunk\ApuntaNotas\ViewModel" File="MainViewModel.cs" Line="39">클래스에서 정의한 가상 메서드를 호출하는 호출 체인이 'MainViewModel.MainViewModel(INoteRepository, ICategoryRepository)'에 있습니다. &#xD;&#xA;&#xD;&#xA;MainViewModel..ctor(INoteRepository, ICategoryRepository)&#xD;&#xA;MainViewModel.set_Notes(ObservableCollection&lt;Note&gt;):Void&#xD;&#xA;ViewModelBase.RaisePropertyChanged(String):Void 호출 스택을 검토하여 의도하지 않은 결과는 없는지 확인하십시오.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214">
+   <Name>재정의 가능한 메서드를 생성자에서 호출하지 마십시오.</Name>
+   <Description>클래스에 정의된 가상 메서드는 생성자에서 호출하면 안 됩니다. 생성자에서 파생된 클래스가 메서드를 재정의하면 파생 클래스 생성자가 호출되기 전에 파생 클래스 버전이 호출됩니다.</Description>
+   <Resolution Name="Default">클래스에서 정의한 가상 메서드를 호출하는 호출 체인이 {0}에 있습니다. {1} 호출 스택을 검토하여 의도하지 않은 결과는 없는지 확인하십시오.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182331.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalWarning</MessageLevel>
+   <File Name="usagerules.dll" Version="14.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">범주</String>
+  <String Key="Certainty">확신도</String>
+  <String Key="CollapseAll">모두 축소</String>
+  <String Key="CheckId">확인 ID</String>
+  <String Key="Error">오류</String>
+  <String Key="Errors">개 오류</String>
+  <String Key="ExpandAll">모두 확장</String>
+  <String Key="Help">도움말</String>
+  <String Key="Line">줄</String>
+  <String Key="Messages">메시지</String>
+  <String Key="LocationNotStoredInPdb">[Pdb에 위치가 저장되지 않음]</String>
+  <String Key="Project">프로젝트</String>
+  <String Key="Resolution">확인</String>
+  <String Key="Rule">규칙</String>
+  <String Key="RuleFile">규칙 파일</String>
+  <String Key="RuleDescription">규칙 설명</String>
+  <String Key="Source">소스</String>
+  <String Key="Status">상태</String>
+  <String Key="Target">대상</String>
+  <String Key="Warning">경고</String>
+  <String Key="Warnings">경고</String>
+  <String Key="ReportTitle">코드 분석 보고서</String>
+ </Localized>
+</FxCopReport>
